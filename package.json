@@ -1,7 +1,7 @@
 {
   "name": "shelly-vscode-extension",
   "displayName": "Shelly Script Editor",
-  "publisher": "Shelly Europe",
+  "publisher": "ShellyEurope",
   "description": "Edit Shelly Scripts in your local network using VSCode",
   "version": "0.0.1",
   "icon": "media/shelly.png",
