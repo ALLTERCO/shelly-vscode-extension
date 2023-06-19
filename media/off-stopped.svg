@@ -1,0 +1,11 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+	<title>off-svg</title>
+	<defs>
+		<image  width="7" height="7" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAMAAADzjKfhAAAAAXNSR0IB2cksfwAAAEVQTFRFAAAABXHKCXTOIZbzDHfSCXXQB3PMB3PNIZbzBnLLBHHJBHHJBHHKJpP0BXLLBnPLCHXOCHTOD3jVBXHLC3XQBXLKCXXOeVeJ7QAAABd0Uk5TAP/8Dvz3/v4r//7//0P//vz99/79/fbkHvklAAAALUlEQVR4nGNggAFGJmYWViDNxs7ByQWkuXl4+fiBtIAgB6cQkBYWYRYVg6sGABizARLP1y28AAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+		.s0 { fill: #b2b1ff } 
+	</style>
+	<path id="Layer" class="s0" d="m16.5 17.5h-9c-1.5 0-2.9-0.6-3.9-1.6-1-1-1.6-2.4-1.6-3.9 0-1.5 0.6-2.9 1.6-3.9 1-1 2.4-1.6 3.9-1.6h9c1.5 0 2.9 0.6 3.9 1.6 1 1 1.6 2.4 1.6 3.9 0 1.5-0.6 2.9-1.6 3.9-1 1-2.4 1.6-3.9 1.6z"/>
+	<use id="stop1" href="#img1" x="4" y="8"/>
+</svg>

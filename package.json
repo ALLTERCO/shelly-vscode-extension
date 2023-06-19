@@ -1,0 +1,370 @@
+{
+  "name": "shelly-vscode-extension",
+  "displayName": "Shelly Script Editor",
+  "publisher": "Shelly Europe",
+  "description": "Edit Shelly Scripts in your local network using VSCode",
+  "version": "0.0.1",
+  "icon": "media/shelly.png",
+  "engines": {
+    "vscode": "^1.76.0"
+  },
+  "categories": [
+    "Other",
+    "Snippets"
+  ],
+  "permissions": [
+    "workspace",
+    "textDocument"
+  ],
+  "activationEvents": [
+    "onView:shelly-vscode-extension"
+  ],
+  "main": "./dist/extension.js",
+  "repository": {
+    "url": "https://github.com/ALLTERCO/shelly-vscode-extension"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets.json"
+      }
+    ],
+    "menus": {
+      "view/item/context": [
+        {
+          "command": "shelly-vscode-extension.create",
+          "when": "view == shelly-vscode-extension && viewItem == parent-item",
+          "group": "inline"
+        },
+        {
+          "command": "shelly-vscode-extension.start",
+          "arguments": [
+            "viewItem"
+          ],
+          "when": "view == shelly-vscode-extension && viewItem == child-item",
+          "group": "navigation@3"
+        },
+        {
+          "command": "shelly-vscode-extension.stop",
+          "arguments": [
+            "viewItem"
+          ],
+          "when": "view == shelly-vscode-extension && viewItem == child-item",
+          "group": "navigation@4"
+        },
+        {
+          "command": "shelly-vscode-extension.enable",
+          "arguments": [
+            "viewItem"
+          ],
+          "when": "view == shelly-vscode-extension && viewItem == child-item",
+          "group": "navigation@1"
+        },
+        {
+          "command": "shelly-vscode-extension.disable",
+          "arguments": [
+            "viewItem"
+          ],
+          "when": "view == shelly-vscode-extension && viewItem == child-item",
+          "group": "navigation@2"
+        },
+        {
+          "command": "shelly-vscode-extension.openWebsite",
+          "arguments": [
+            "viewItem"
+          ],
+          "when": "view == shelly-vscode-extension && viewItem == parent-item",
+          "group": "1_modification"
+        },
+        {
+          "command": "shelly-vscode-extension.eval",
+          "arguments": [
+            "viewItem"
+          ],
+          "when": "view == shelly-vscode-extension && viewItem == child-item",
+          "group": "1_modification"
+        },
+        {
+          "command": "shelly-vscode-extension.create",
+          "arguments": [
+            "viewItem"
+          ],
+          "when": "view == shelly-vscode-extension && viewItem == parent-item",
+          "group": "navigation"
+        },
+        {
+          "command": "shelly-vscode-extension.rename",
+          "arguments": [
+            "viewItem"
+          ],
+          "when": "view == shelly-vscode-extension && viewItem == child-item",
+          "group": "z_commands@1"
+        },
+        {
+          "command": "shelly-vscode-extension.delete",
+          "arguments": [
+            "viewItem"
+          ],
+          "when": "view == shelly-vscode-extension && viewItem == child-item",
+          "group": "z_commands@2"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "shelly-vscode-extension.enable",
+          "group": "navigation",
+          "when": "!shelly-vscode-extension.isEnabled && shelly-vscode-extension.active"
+        },
+        {
+          "command": "shelly-vscode-extension.disable",
+          "group": "navigation",
+          "when": "shelly-vscode-extension.isEnabled && shelly-vscode-extension.active"
+        },
+        {
+          "command": "shelly-vscode-extension.start",
+          "group": "navigation",
+          "when": "!shelly-vscode-extension.isStarted && shelly-vscode-extension.active"
+        },
+        {
+          "command": "shelly-vscode-extension.stop",
+          "group": "navigation",
+          "when": "shelly-vscode-extension.isStarted && shelly-vscode-extension.active"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "shelly-vscode-extension.addShelly",
+          "group": "navigation",
+          "when": "view == shelly-vscode-extension"
+        },
+        {
+          "command": "shelly-vscode-extension.freeze",
+          "group": "navigation",
+          "when": "view == shelly-vscode-extension && !shelly-vscode-extension.frozen"
+        },
+        {
+          "command": "shelly-vscode-extension.unfreeze",
+          "group": "navigation",
+          "when": "view == shelly-vscode-extension && shelly-vscode-extension.frozen"
+        },
+        {
+          "command": "shelly-vscode-extension.firstConsoleFormat",
+          "when": "resourceScheme == 'output' && shelly-vscode-extension.firstCF && shelly-vscode-extension.active",
+          "group": "navigation"
+        },
+        {
+          "command": "shelly-vscode-extension.secondConsoleFormat",
+          "when": "resourceScheme == 'output' && shelly-vscode-extension.secondCF && shelly-vscode-extension.active",
+          "group": "navigation"
+        },
+        {
+          "command": "shelly-vscode-extension.firstConsoleFormat1",
+          "when": "resourceScheme == 'output' && !shelly-vscode-extension.firstCF && shelly-vscode-extension.active",
+          "group": "navigation"
+        },
+        {
+          "command": "shelly-vscode-extension.secondConsoleFormat1",
+          "when": "resourceScheme == 'output'  && !shelly-vscode-extension.secondCF && shelly-vscode-extension.active",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "shelly-vscode-extension",
+      "properties": {
+        "shelly-vscode-extension.isStarted": {
+          "type": "boolean"
+        },
+        "shelly-vscode-extension.isEnabled": {
+          "type": "boolean"
+        },
+        "shelly-vscode-extension.firstCF": {
+          "type": "boolean"
+        },
+        "shelly-vscode-extension.secondCF": {
+          "type": "boolean"
+        },
+        "shelly-vscode-extension.active": {
+          "type": "boolean",
+          "default": false
+        },
+        "shelly-vscode-extension.frozen": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "shelly-vscode-extension-view",
+          "title": "Shelly",
+          "icon": "media/shelly.svg"
+        }
+      ]
+    },
+    "views": {
+      "shelly-vscode-extension-view": [
+        {
+          "type": "tree",
+          "id": "shelly-vscode-extension",
+          "name": "Shelly",
+          "icon": "media/shelly.svg",
+          "contextualTitle": "Shelly"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "shelly-vscode-extension.openScriptFile",
+        "title": "Create Script File"
+      },
+      {
+        "command": "shelly-vscode-extension.create",
+        "title": "Create Script",
+        "icon": {
+          "light": "./media/light/new-file.svg",
+          "dark": "./media/dark/new-file.svg"
+        }
+      },
+      {
+        "command": "shelly-vscode-extension.delete",
+        "title": "Delete Script"
+      },
+      {
+        "command": "shelly-vscode-extension.rename",
+        "title": "Rename"
+      },
+      {
+        "command": "shelly-vscode-extension.start",
+        "title": "Start",
+        "icon": {
+          "light": "./media/light/start.svg",
+          "dark": "./media/dark/start.svg"
+        }
+      },
+      {
+        "command": "shelly-vscode-extension.stop",
+        "title": "Stop",
+        "icon": {
+          "light": "./media/light/stop.svg",
+          "dark": "./media/dark/stop.svg"
+        }
+      },
+      {
+        "command": "shelly-vscode-extension.enable",
+        "title": "Enable",
+        "icon": {
+          "light": "./media/light/toggle-on.svg",
+          "dark": "./media/dark/toggle-on.svg"
+        }
+      },
+      {
+        "command": "shelly-vscode-extension.disable",
+        "title": "Disable",
+        "icon": {
+          "light": "./media/light/toggle-off.svg",
+          "dark": "./media/dark/toggle-off.svg"
+        }
+      },
+      {
+        "command": "shelly-vscode-extension.eval",
+        "title": "Eval"
+      },
+      {
+        "command": "shelly-vscode-extension.last",
+        "title": "Last"
+      },
+      {
+        "command": "shelly-vscode-extension.firstConsoleFormat",
+        "title": "Script Output",
+        "icon": {
+          "light": "./media/light/check-filled.svg",
+          "dark": "./media/dark/check-filled.svg"
+        }
+      },
+      {
+        "command": "shelly-vscode-extension.secondConsoleFormat",
+        "title": "Full Log",
+        "icon": {
+          "light": "./media/light/check-filled.svg",
+          "dark": "./media/dark/check-filled.svg"
+        }
+      },
+      {
+        "command": "shelly-vscode-extension.firstConsoleFormat1",
+        "title": "Script Output",
+        "icon": {
+          "light": "./media/light/check-empty.svg",
+          "dark": "./media/dark/check-empty.svg"
+        }
+      },
+      {
+        "command": "shelly-vscode-extension.secondConsoleFormat1",
+        "title": "Full Log",
+        "icon": {
+          "light": "./media/light/check-empty.svg",
+          "dark": "./media/dark/check-empty.svg"
+        }
+      },
+      {
+        "command": "shelly-vscode-extension.openWebsite",
+        "title": "Open Interface"
+      },
+      {
+        "command": "shelly-vscode-extension.addShelly",
+        "title": "ADD"
+      },
+      {
+        "command": "shelly-vscode-extension.freeze",
+        "title": "FREEZE"
+      },
+      {
+        "command": "shelly-vscode-extension.unfreeze",
+        "title": "UNFREEZE"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "webpack --config  ./build/node-extension.webpack.config.js",
+    "watch": "webpack --watch --config ./build/node-extension.webpack.config.js",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "jest",
+    "package": "vsce package",
+    "wdio": "wdio run ./wdio.conf.ts"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@rollup/plugin-typescript": "^8.5.0",
+    "@types/jest": "^29.5.1",
+    "@types/multicast-dns": "^7.2.1",
+    "@types/node": "^12.20.55",
+    "@types/node-fetch": "^3.0.2",
+    "@types/vscode": "^1.76.0",
+    "@types/ws": "^8.5.4",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "eslint": "^7.32.0",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "ts-loader": "^8.4.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5",
+    "vscode-extension-tester": "^5.7.1",
+    "vscode-test": "^1.6.1",
+    "wdio-chromedriver-service": "^8.1.1",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "@vscode/test-electron": "^2.3.2",
+    "multicast-dns": "^7.2.5",
+    "node-fetch": "^3.3.1",
+    "os": "^0.1.2",
+    "ws": "^8.13.0"
+  }
+}

@@ -1,0 +1,11 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+	<title>toggle-on-svg</title>
+	<defs>
+		<image  width="10" height="10" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAAAXNSR0IB2cksfwAAAG9QTFRFAAAAgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEpdCSbQAAACV0Uk5TAAswL3pVBVbr/f7/1gEU8cduNK6wvcJafgS7/LodP9vvZAhZFTlD7a0AAABNSURBVHicNcxFEoBAFAPRxmE+g7vb/c+IZ5O3SAUwTMt2XK54fqBEQg1RLE8SSF+Jysg/SkH5s6L+Bw1t96gfRtDT3Ktl3e5jdLYfV53bVwTOjeBSTwAAAABJRU5ErkJggg=="/>
+		<image width="16" height="16" id="img2" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iZGltZ3JleSIKICAgIGNsYXNzPSJiaSBiaS10b2dnbGUtb24iIHZpZXdCb3g9IjAgMCAxNiAxNiI+CiAgICA8cGF0aCBkPSJNNSAzYTUgNSAwIDAgMCAwIDEwaDZhNSA1IDAgMCAwIDAtMTBINXptNiA5YTQgNCAwIDEgMSAwLTggNCA0IDAgMCAxIDAgOHoiIC8+Cjwvc3ZnPg=="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Layer 1" href="#img1" x="6" y="3"/>
+	<use id="toggle-on" href="#img2" transform="matrix(1,0,0,1,0,0)"/>
+</svg>

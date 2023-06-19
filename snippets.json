@@ -1,0 +1,71 @@
+{
+	"Add Shelly EventHandler": {
+		"prefix": "addEventHandler",
+		"body": [
+			"Shelly.addEventHandler(function(event){",
+			"\t$0",
+            "});"
+		],
+		"description": "Add Shelly EventHandler"
+	},
+	"Add Shelly StatusHandler": {
+		"prefix": "addStatusHandler",
+		"body": [
+			"Shelly.addStatusHandler(function(event){",
+			"\t$0",
+            "});"
+		],
+		"description": "Add Shelly StatusHandler"
+	},
+	"Remove Shelly EventHandler": {
+		"prefix": "removeEventHandler",
+		"body": [
+			"Shelly.removeEventHandler($0)"
+		],
+		"description": "Remove Shelly EventHandler"
+	},
+	"Remove Shelly StatusHandler": {
+		"prefix": "removeStatusHandler",
+		"body": [
+			"Shelly.removeStatusHandler($0)"
+		],
+		"description": "Remove Shelly StatusHandler"
+	},
+	"Emit Event": {
+		"prefix": "emitEvent",
+		"body":[
+			"Shelly.emitEvent($1,$2)"
+		],
+		"description": "Emit Event"
+	},
+	"Set Timer": {
+		"prefix": "setTimer",
+		"body": [
+			"Timer.set($1,${2|true,false}, function(){",
+			"\t$0",
+			"});"
+		],
+		"description": "Set Timer"
+	},
+	"Clear Timer": {
+		"prefix": "clearTimer",
+		"body": [
+			"Timer.clear($0)"
+		],
+		"description": "Clear Timer"
+	},
+	"Register HTTP Endpoint": {
+		"prefix":"registerEndpoint",
+		"body":[
+			"HTTPServer.registerEndpoint(\"$1\", function(request, response){",
+			"\t$0",
+			"});"
+		],
+		"description": "Register HTTP Endpoint"
+	},
+	"Add shelly types": {
+		"prefix": "reference-shelly",
+		"body": ["/// <reference path=\"../../shelly-script.d.ts\" />"],
+		"description": "Add shelly types"
+	}
+}

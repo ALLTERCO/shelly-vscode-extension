@@ -1,0 +1,11 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+	<title>toggle-on-svg</title>
+	<defs>
+		<image  width="14" height="10" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAKCAMAAACzB5/1AAAAAXNSR0IB2cksfwAAAGlQTFRFAAAAgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEgPpEG0Q7ygAAACN0Uk5TABFfdZzEiSqt/P93TvD+Ww/LMuRm1Vxv8yZu4/r9HBIijvsOrgliAAAAV0lEQVR4nGXN1w6AIBBE0VGxsCJib2D7/48UiRoSz9vNJrOAFYQRY3ECJ804OfldoqCHLAFV0UfWUI2XLVTnZQ8M/K2RJrs1L9rYi+G0uk/bLg6jT46fC3DIBVPSKCn5AAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+		.s0 { fill: #d3d3d3 } 
+	</style>
+	<use id="Layer 1" href="#img1" x="2" y="3"/>
+	<path id="Layer" fill-rule="evenodd" class="s0" d="m11 3c1.3 0 2.6 0.5 3.5 1.5 1 0.9 1.5 2.2 1.5 3.5 0 1.3-0.5 2.6-1.5 3.5-0.9 1-2.2 1.5-3.5 1.5h-6c-1.3 0-2.6-0.5-3.5-1.5-1-0.9-1.5-2.2-1.5-3.5 0-1.3 0.5-2.6 1.5-3.5 0.9-1 2.2-1.5 3.5-1.5zm2.8 7.8c0.8-0.7 1.2-1.7 1.2-2.8 0-1.1-0.4-2.1-1.2-2.8-0.7-0.8-1.7-1.2-2.8-1.2-1.1 0-2.1 0.4-2.8 1.2-0.8 0.7-1.2 1.7-1.2 2.8 0 1.1 0.4 2.1 1.2 2.8 0.7 0.8 1.7 1.2 2.8 1.2 1.1 0 2.1-0.4 2.8-1.2z"/>
+</svg>
